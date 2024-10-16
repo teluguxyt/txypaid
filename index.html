@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roxx Mod v4.8 by TDX</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .bg-primary { background-color: #3b82f6; }
+        .text-primary { color: #3b82f6; }
+        .text-primary-foreground { color: #ffffff; }
+        .bg-green-500 { background-color: #22c55e; }
+        .bg-green-600 { background-color: #16a34a; }
+        .text-accent { color: #f59e0b; }
+        .text-secondary { color: #6b7280; }
+        .text-muted-foreground { color: #9ca3af; }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900">
+
+<div class="bg-background dark:bg-zinc-800 p-6 rounded-lg shadow-lg transition-all duration-300 max-w-md mx-auto mt-10">
+    <h1 class="text-2xl font-extrabold text-center mb-6 text-primary">Telugu X Yt Mods</h1>
+    <div class="flex items-center justify-between mb-6">
+        <span class="text-lg font-semibold text-accent">SERVER :-</span>
+        <span id="connectTxt" class="bg-red text-white px-4 py-2 rounded-lg shadow">CONNECT</span>
+    </div>
+    <div class="mb-6">
+        <label for="periodNumber" class="block text-lg font-semibold text-secondary">PERIOD NO :</label>
+        <input id="periodNumber" type="number" value="" class="border border-zinc-300 dark:border-zinc-600 p-3 rounded-lg w-full focus:ring-2 focus:ring-accent transition" />
+    </div>
+    <div class="mb-6">
+        <span class="text-lg font-semibold text-secondary">RESULT :</span>
+        <span id="result" class="bg-green-500 text-white px-3 py-1 rounded-lg shadow">Small</span>
+    </div>
+    <button id="seeResultBtn" class="bg-green-600 text-white px-4 py-2 rounded-lg w-full shadow hover:bg-green-500 transition">SEE RESULT</button>
+    <h2 class="text-xl font-bold mt-8 text-accent">PREDICTOR: AI-DRIVEN ACCURACY</h2>
+    <p class="text-muted-foreground dark:text-zinc-400 mb-6">
+        PREDICTOR gives you an edge with AI-powered precision. Whether BIG or SMALL, outcomes are determined by our advanced panel server. We reveal what's next, keeping you ahead of the game.
+    </p>
+    <h3 class="font-bold text-lg text-primary">How It Works:</h3>
+    <ol class="list-decimal list-inside text-muted-foreground dark:text-zinc-400">
+        <li>Enter the Period Number: Input the Period Number to sync with our AI and ensure precise results.</li>
+        <li>Confirm and Start: Verify your settings and click "Start" to begin.</li>
+        <li>Monitor Earnings: Track your real-time earnings easily with our user-friendly interface.</li>
+    </ol>
+</div>
+
+<script>
+    const connectBtn = document.getElementById('connectBtn');
+    const periodNumberInput = document.getElementById('periodNumber');
+    const resultSpan = document.getElementById('result');
+    const seeResultBtn = document.getElementById('seeResultBtn');
+
+    const updateResult = () => {
+        if (periodNumberInput.value.trim() === '') {
+            alert('Please enter a valid Period Number.');
+        } else {
+            const periodValue = parseInt(periodNumberInput.value);
+            resultSpan.textContent = (periodValue % 2 === 0) ? 'Big' : 'Small';
+        }
+    };
+
+    connectBtn.addEventListener('click', updateResult);
+    seeResultBtn.addEventListener('click', updateResult);
+</script>
+
+</body>
+</html>
